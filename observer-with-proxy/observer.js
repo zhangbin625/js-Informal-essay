@@ -1,14 +1,20 @@
+
 class ProxyObservable {
   constructor() {
+    //用于观察者存放数据的
     this.queueObservers = new Set();
     this.setName = this.setName.bind(this)
   }
 
+  //绑定订阅者
   observe(func) {
     this.queueObservers.add(func);
   }
 
-  observable(obj){
+  /**
+   * 观察者
+   * */
+  observable(obj) {
     return new Proxy(obj, {
       set: this.setName
     })
