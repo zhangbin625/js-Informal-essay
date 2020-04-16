@@ -42,4 +42,4 @@ const print = () => {
 
 obs.observe(print)
 obs.observe(print2)
-testData.name = ' 小美呀'
+testData.name = ' 小美'
